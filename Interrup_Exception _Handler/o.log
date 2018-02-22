@@ -1,0 +1,1394 @@
++--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
+| CYCLE  | FETCH  | DECODE | EXECUT | MEMORY | WRITE  |   r0   |   r1   |   r2   |   r3   |   r4   |   r5   |   r6   |   r7   |   r8   |   r9   |  r10   |  r11   |  r12   |  r13   |   sp   |   ra   |   opc  |  osp   |   ofl  |   crg  |
++--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
+|      1 | I1     |  ....  |  ....  |  ....  |  ....  |       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|90000003
+68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|      2 | I2     | I1     |  ....  |  ....  |  ....  |       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|9000000b
+90000003
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|      3 | I3     | I2     | I1     |  ....  |  ....  |       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|9000003b
+9000000b
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|      4 | I4     |  ....  |  ....  | I1     |  ....  |       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|4000004
+68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|      5 | I5     | I4     |  ....  |  ....  | I1     |       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|4000004
+4000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|      6 | I6     | I5     | I4     |  ....  |  ....  |       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|4000004
+4000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|      7 | I6     | I5     |  ....  | I4     |  ....  |       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|4000004
+4000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|      8 | I6     | I5     |  ....  |  ....  | I4     |       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|4000004
+4000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|      9 | I6     | I5     |  ....  |  ....  |  ....  |       4|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|4000004
+4000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     10 | I7     | I6     | I5     |  ....  |  ....  |       4|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|2c000004
+4000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     11 | I7     | I6     |  ....  | I5     |  ....  |       4|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|2c000004
+4000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     12 | I7     | I6     |  ....  |  ....  | I5     |       4|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|2c000004
+4000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     13 | I7     | I6     |  ....  |  ....  |  ....  |       8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|2c000004
+4000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     14 | I8     | I7     | I6     |  ....  |  ....  |       8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|4c0080e8
+2c000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     15 | I8     | I7     |  ....  | I6     |  ....  |       8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|4c0080e8
+2c000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     16 | I8     | I7     |  ....  |  ....  | I6     |       8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|4c0080e8
+2c000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     17 | I8     | I7     |  ....  |  ....  |  ....  |       c|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|4c0080e8
+2c000004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     18 | I9     | I8     | I7     |  ....  |  ....  |       c|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|74400000
+4c0080e8
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     19 | I10    | I9     | I8     | I7     |  ....  |       c|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|7d800000
+74400000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     20 | I10    | I9     |  ....  | I8     | I7     |       c|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|7d800000
+74400000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     21 | I10    | I9     |  ....  |  ....  | I8     |       c|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|7d800000
+74400000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     22 | I10    | I9     |  ....  |  ....  |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|7d800000
+74400000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     23 | I11    | I10    | I9     |  ....  |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|88000063
+7d800000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     24 | I12    | I11    | I10    | I9     |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|90000062
+88000063
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+m4 ffffffff 
+
+|     25 | I13    | I12    | I11    | I10    |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|a8a38000
+90000062
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+m5 4 
+
+|     26 |  ....  |  ....  |  ....  | I11    |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|       0|       0|       0|       0|68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+5 5 
+
+|     27 | I2     |  ....  |  ....  |  ....  | I11    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|       0|       1|       5|9000000b
+68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     28 | I3     | I2     |  ....  |  ....  |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|       0|       1|       5|9000003b
+9000000b
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     29 | I4     | I3     | I2     |  ....  |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|       0|       1|       5|4000004
+9000003b
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     30 | I13    |  ....  |  ....  | I2     |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|       0|       1|       5|a8a38000
+68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     31 | I14    | I13    |  ....  |  ....  | I2     |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|       0|       1|       5|4f807d96
+a8a38000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     32 | I15    | I14    | I13    |  ....  |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|       0|       1|       5|fb80048
+4f807d96
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     33 | I16    | I15    | I14    | I13    |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|       0|       1|       5|7c380000
+fb80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     34 | I16    | I15    |  ....  | I14    | I13    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|       0|       1|       5|7c380000
+fb80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     35 | I16    | I15    |  ....  |  ....  | I14    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|    7fff|       1|       5|7c380000
+fb80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     36 | I16    | I15    |  ....  |  ....  |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d96|       0|      24|    7fff|       1|       5|7c380000
+fb80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     37 | I17    | I16    | I15    |  ....  |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d96|       0|      24|    7fff|       1|       5|7c780004
+7c380000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     38 | I17    | I16    |  ....  | I15    |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d96|       0|      24|    7fff|       1|       5|7c780004
+7c380000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     39 | I17    | I16    |  ....  |  ....  | I15    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d96|       0|      24|    7fff|       1|       5|7c780004
+7c380000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     40 | I17    | I16    |  ....  |  ....  |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7c780004
+7c380000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     41 | I18    | I17    | I16    |  ....  |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7cb80008
+7c780004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     42 | I19    | I18    | I17    | I16    |  ....  |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7cf8000c
+7cb80008
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     43 | I20    | I19    | I18    | I17    | I16    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7d380010
+7cf8000c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     44 | I21    | I20    | I19    | I18    | I17    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7d780014
+7d380010
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     45 | I22    | I21    | I20    | I19    | I18    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7db80018
+7d780014
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     46 | I23    | I22    | I21    | I20    | I19    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7df8001c
+7db80018
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     47 | I24    | I23    | I22    | I21    | I20    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7e380020
+7df8001c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     48 | I25    | I24    | I23    | I22    | I21    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7e780024
+7e380020
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     49 | I26    | I25    | I24    | I23    | I22    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7eb80028
+7e780024
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     50 | I27    | I26    | I25    | I24    | I23    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7ef8002c
+7eb80028
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     51 | I28    | I27    | I26    | I25    | I24    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7f380030
+7ef8002c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     52 | I29    | I28    | I27    | I26    | I25    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7f780034
+7f380030
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     53 | I30    | I29    | I28    | I27    | I26    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7ff80038
+7f780034
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     54 | I31    | I30    | I29    | I28    | I27    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8008000
+7ff80038
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     55 | I32    | I31    | I30    | I29    | I28    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7c38003c
+a8008000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     56 | I33    | I32    | I31    | I30    | I29    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8010000
+7c38003c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     57 | I33    | I32    |  ....  | I31    | I30    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8010000
+7c38003c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     58 | I33    | I32    |  ....  |  ....  | I31    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8010000
+7c38003c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     59 | I33    | I32    |  ....  |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8010000
+7c38003c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     60 | I34    | I33    | I32    |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7c380040
+a8010000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     61 | I35    | I34    | I33    | I32    |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8004000
+7c380040
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     62 | I35    | I34    |  ....  | I33    | I32    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8004000
+7c380040
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     63 | I35    | I34    |  ....  |  ....  | I33    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8004000
+7c380040
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     64 | I35    | I34    |  ....  |  ....  |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8004000
+7c380040
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     65 | I36    | I35    | I34    |  ....  |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7c380044
+a8004000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     66 | I37    | I36    | I35    | I34    |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74380000
+7c380044
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     67 | I37    | I36    |  ....  | I35    | I34    |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74380000
+7c380044
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     68 | I37    | I36    |  ....  |  ....  | I35    |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74380000
+7c380044
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     69 | I37    | I36    |  ....  |  ....  |  ....  |      24|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74380000
+7c380044
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     70 | I38    | I37    | I36    |  ....  |  ....  |      24|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74780004
+74380000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     71 | I39    | I38    | I37    | I36    |  ....  |      24|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74b80008
+74780004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     72 | I40    | I39    | I38    | I37    | I36    |      24|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74f8000c
+74b80008
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     73 | I41    | I40    | I39    | I38    | I37    |      24|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|75380010
+74f8000c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     74 | I42    | I41    | I40    | I39    | I38    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|75780014
+75380010
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     75 | I43    | I42    | I41    | I40    | I39    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|75b80018
+75780014
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     76 | I44    | I43    | I42    | I41    | I40    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|75f8001c
+75b80018
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     77 | I45    | I44    | I43    | I42    | I41    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|76380020
+75f8001c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     78 | I46    | I45    | I44    | I43    | I42    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|76780024
+76380020
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     79 | I47    | I46    | I45    | I44    | I43    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|76b80028
+76780024
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     80 | I48    | I47    | I46    | I45    | I44    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|76f8002c
+76b80028
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     81 | I49    | I48    | I47    | I46    | I45    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|77380030
+76f8002c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     82 | I50    | I49    | I48    | I47    | I46    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|77780034
+77380030
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     83 | I51    | I50    | I49    | I48    | I47    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|77f80038
+77780034
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     84 | I52    | I51    | I50    | I49    | I48    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74380044
+77f80038
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     85 | I53    | I52    | I51    | I50    | I49    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8600000
+74380044
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     86 | I54    | I53    | I52    | I51    | I50    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74380040
+a8600000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     87 | I54    | I53    |  ....  | I52    | I51    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74380040
+a8600000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     88 | I54    | I53    |  ....  |  ....  | I52    |ffff80e8|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74380040
+a8600000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     89 | I54    | I53    |  ....  |  ....  |  ....  |      24|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|74380040
+a8600000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     90 | I55    | I54    | I53    |  ....  |  ....  |      24|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a9200000
+74380040
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     91 | I56    | I55    | I54    | I53    |  ....  |      24|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8008000
+a9200000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     92 | I56    | I55    |  ....  | I54    | I53    |      24|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8008000
+a9200000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     93 | I56    | I55    |  ....  |  ....  | I54    |      24|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8008000
+a9200000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     94 | I56    | I55    |  ....  |  ....  |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|a8008000
+a9200000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     95 | I57    | I56    | I55    |  ....  |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7438003c
+a8008000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     96 | I58    | I57    | I56    | I55    |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|ab808000
+7438003c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     97 | I59    | I58    | I57    | I56    | I55    |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|ab808000
+ab808000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     98 | I59    | I58    |  ....  | I57    | I56    |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|ab808000
+ab808000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|     99 | I59    | I58    |  ....  |  ....  | I57    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|ab808000
+ab808000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    100 | I59    | I58    |  ....  |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|ab808000
+ab808000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    101 | I60    | I59    | I58    |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|7b80048
+ab808000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    102 | I61    | I60    | I59    | I58    |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|b0000000
+7b80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    103 | I61    | I60    |  ....  | I59    | I58    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      24|    7fff|       1|       5|b0000000
+7b80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    104 | I61    | I60    |  ....  |  ....  | I59    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|    7fff|       1|       5|b0000000
+7b80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    105 | I61    | I60    |  ....  |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|    7fff|       1|       5|b0000000
+7b80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    106 | I62    | I61    | I60    |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|    7fff|       1|       5|a8a38000
+b0000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    107 | I63    | I62    | I61    | I60    |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|    7fff|       1|       5|4f807fff
+a8a38000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    108 | I10    |  ....  |  ....  | I61    | I60    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7fff|       0|      24|    7fff|       1|       5|7d800000
+68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    109 | I11    | I10    |  ....  |  ....  | I61    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      24|    7fff|       1|       5|88000063
+7d800000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    110 | I12    | I11    | I10    |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      24|    7fff|       1|       5|90000062
+88000063
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    111 | I13    | I12    | I11    | I10    |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      24|    7fff|       1|       5|a8a38000
+90000062
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+m5 ffffffff 
+
+|    112 |  ....  |  ....  |  ....  | I11    |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      24|    7fff|       1|       5|68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+5 5 
+
+|    113 |  ....  |  ....  |  ....  |  ....  | I11    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      24|    7fff|       1|       5|68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+5 5 
+
+|    114 | I2     |  ....  |  ....  |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    7fff|       1|       5|9000000b
+68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    115 | I3     | I2     |  ....  |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    7fff|       1|       5|9000003b
+9000000b
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    116 | I4     | I3     | I2     |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    7fff|       1|       5|4000004
+9000003b
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    117 | I13    |  ....  |  ....  | I2     |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    7fff|       1|       5|a8a38000
+68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    118 | I14    | I13    |  ....  |  ....  | I2     |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    7fff|       1|       5|4f807d96
+a8a38000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    119 | I15    | I14    | I13    |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    7fff|       1|       5|fb80048
+4f807d96
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    120 | I16    | I15    | I14    | I13    |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    7fff|       1|       5|7c380000
+fb80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    121 | I16    | I15    |  ....  | I14    | I13    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    7fff|       1|       5|7c380000
+fb80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    122 | I16    | I15    |  ....  |  ....  | I14    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    8047|       1|       5|7c380000
+fb80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    123 | I16    | I15    |  ....  |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d96|       0|      28|    8047|       1|       5|7c380000
+fb80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    124 | I17    | I16    | I15    |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d96|       0|      28|    8047|       1|       5|7c780004
+7c380000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    125 | I17    | I16    |  ....  | I15    |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d96|       0|      28|    8047|       1|       5|7c780004
+7c380000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    126 | I17    | I16    |  ....  |  ....  | I15    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d96|       0|      28|    8047|       1|       5|7c780004
+7c380000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    127 | I17    | I16    |  ....  |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7c780004
+7c380000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    128 | I18    | I17    | I16    |  ....  |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7cb80008
+7c780004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    129 | I19    | I18    | I17    | I16    |  ....  |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7cf8000c
+7cb80008
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    130 | I20    | I19    | I18    | I17    | I16    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7d380010
+7cf8000c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    131 | I21    | I20    | I19    | I18    | I17    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7d780014
+7d380010
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    132 | I22    | I21    | I20    | I19    | I18    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7db80018
+7d780014
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    133 | I23    | I22    | I21    | I20    | I19    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7df8001c
+7db80018
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    134 | I24    | I23    | I22    | I21    | I20    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7e380020
+7df8001c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    135 | I25    | I24    | I23    | I22    | I21    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7e780024
+7e380020
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    136 | I26    | I25    | I24    | I23    | I22    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7eb80028
+7e780024
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    137 | I27    | I26    | I25    | I24    | I23    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7ef8002c
+7eb80028
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    138 | I28    | I27    | I26    | I25    | I24    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7f380030
+7ef8002c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    139 | I29    | I28    | I27    | I26    | I25    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7f780034
+7f380030
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    140 | I30    | I29    | I28    | I27    | I26    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7ff80038
+7f780034
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    141 | I31    | I30    | I29    | I28    | I27    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8008000
+7ff80038
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    142 | I32    | I31    | I30    | I29    | I28    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7c38003c
+a8008000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    143 | I33    | I32    | I31    | I30    | I29    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8010000
+7c38003c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    144 | I33    | I32    |  ....  | I31    | I30    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8010000
+7c38003c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    145 | I33    | I32    |  ....  |  ....  | I31    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8010000
+7c38003c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    146 | I33    | I32    |  ....  |  ....  |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8010000
+7c38003c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    147 | I34    | I33    | I32    |  ....  |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7c380040
+a8010000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    148 | I35    | I34    | I33    | I32    |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8004000
+7c380040
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    149 | I35    | I34    |  ....  | I33    | I32    |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8004000
+7c380040
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    150 | I35    | I34    |  ....  |  ....  | I33    |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8004000
+7c380040
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    151 | I35    | I34    |  ....  |  ....  |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8004000
+7c380040
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    152 | I36    | I35    | I34    |  ....  |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7c380044
+a8004000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    153 | I37    | I36    | I35    | I34    |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74380000
+7c380044
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    154 | I37    | I36    |  ....  | I35    | I34    |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74380000
+7c380044
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    155 | I37    | I36    |  ....  |  ....  | I35    |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74380000
+7c380044
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    156 | I37    | I36    |  ....  |  ....  |  ....  |      28|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74380000
+7c380044
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    157 | I38    | I37    | I36    |  ....  |  ....  |      28|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74780004
+74380000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    158 | I39    | I38    | I37    | I36    |  ....  |      28|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74b80008
+74780004
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    159 | I40    | I39    | I38    | I37    | I36    |      28|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74f8000c
+74b80008
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    160 | I41    | I40    | I39    | I38    | I37    |      28|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|75380010
+74f8000c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    161 | I42    | I41    | I40    | I39    | I38    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|75780014
+75380010
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    162 | I43    | I42    | I41    | I40    | I39    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|75b80018
+75780014
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    163 | I44    | I43    | I42    | I41    | I40    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|75f8001c
+75b80018
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    164 | I45    | I44    | I43    | I42    | I41    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|76380020
+75f8001c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    165 | I46    | I45    | I44    | I43    | I42    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|76780024
+76380020
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    166 | I47    | I46    | I45    | I44    | I43    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|76b80028
+76780024
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    167 | I48    | I47    | I46    | I45    | I44    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|76f8002c
+76b80028
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    168 | I49    | I48    | I47    | I46    | I45    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|77380030
+76f8002c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    169 | I50    | I49    | I48    | I47    | I46    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|77780034
+77380030
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    170 | I51    | I50    | I49    | I48    | I47    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|77f80038
+77780034
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    171 | I52    | I51    | I50    | I49    | I48    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74380044
+77f80038
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    172 | I53    | I52    | I51    | I50    | I49    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8600000
+74380044
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    173 | I54    | I53    | I52    | I51    | I50    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74380040
+a8600000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    174 | I54    | I53    |  ....  | I52    | I51    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74380040
+a8600000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    175 | I54    | I53    |  ....  |  ....  | I52    |    7fff|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74380040
+a8600000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    176 | I54    | I53    |  ....  |  ....  |  ....  |      28|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|74380040
+a8600000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    177 | I55    | I54    | I53    |  ....  |  ....  |      28|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a9200000
+74380040
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    178 | I56    | I55    | I54    | I53    |  ....  |      28|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8008000
+a9200000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    179 | I56    | I55    |  ....  | I54    | I53    |      28|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8008000
+a9200000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    180 | I56    | I55    |  ....  |  ....  | I54    |      28|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8008000
+a9200000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    181 | I56    | I55    |  ....  |  ....  |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|a8008000
+a9200000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    182 | I57    | I56    | I55    |  ....  |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7438003c
+a8008000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    183 | I58    | I57    | I56    | I55    |  ....  |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|ab808000
+7438003c
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    184 | I59    | I58    | I57    | I56    | I55    |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|ab808000
+ab808000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    185 | I59    | I58    |  ....  | I57    | I56    |       1|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|ab808000
+ab808000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    186 | I59    | I58    |  ....  |  ....  | I57    |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|ab808000
+ab808000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    187 | I59    | I58    |  ....  |  ....  |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|ab808000
+ab808000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    188 | I60    | I59    | I58    |  ....  |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|7b80048
+ab808000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    189 | I61    | I60    | I59    | I58    |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|b0000000
+7b80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    190 | I61    | I60    |  ....  | I59    | I58    |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    7d4e|       0|      28|    8047|       1|       5|b0000000
+7b80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    191 | I61    | I60    |  ....  |  ....  | I59    |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    8047|       1|       5|b0000000
+7b80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    192 | I61    | I60    |  ....  |  ....  |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    8047|       1|       5|b0000000
+7b80048
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    193 | I62    | I61    | I60    |  ....  |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    8047|       1|       5|a8a38000
+b0000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    194 | I63    | I62    | I61    | I60    |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    8047|       1|       5|4f807fff
+a8a38000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    195 | I11    |  ....  |  ....  | I61    | I60    |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    8047|       0|      28|    8047|       1|       5|88000063
+68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    196 | I12    | I11    |  ....  |  ....  | I61    |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    808f|       0|      28|    8047|       1|       5|90000062
+88000063
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    197 | I13    | I12    | I11    |  ....  |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    808f|       0|      28|    8047|       1|       5|a8a38000
+90000062
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    198 |  ....  |  ....  |  ....  | I11    |  ....  |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    808f|       0|      28|    8047|       1|       5|68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
+|    199 |  ....  |  ....  |  ....  |  ....  | I11    |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    808f|       0|      28|    8047|       1|       5|68000000
+1
+ffffffff ffffffff 
+ffffffff ffffffff 
+ffffffff ffffffff 
+
++--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
+|           Register Values at Termination            |    8047|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|       0|    808f|       0|
++--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
