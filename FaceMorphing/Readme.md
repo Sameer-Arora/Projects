@@ -1,5 +1,9 @@
 
 
+### INTRODUCTION
+
+I built a face morphing tool in opencv/c++ which nicely morphs one's face to the other's using the delaunauy triangulation and  affine transformations.
+
 ### HOW TO RUN
 
 1) To complie type:g++ facemorph.cpp ‘pkg-config –cflags opencv –libs opencv
